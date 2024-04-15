@@ -21,3 +21,10 @@ infine lo aggiungiamo nello schermo
 FRAME E MOVIMENTO:
 per il frame creiamo una funzione frame dove dopo aver disegnato a schermo aggiungiamo
 una funzione al "windows" dove si chiede un animationFrame dove richiediamo un frame
+in questo dobbiamo darci come parametro un tempo fissso(questo numero è in millisecondi quindi per un secondo sono 1000 millisecondi)
+questo numero indica quanto tempo passa fra i millisecondi (a 60 fps sono 16.7 millisecondi in altri casi guardare "https://fpstoms.com")
+usiamo una variabile MaxDeltaTime per bloccare quando il framerate scende troppo facendo funzionare le cose male
+come ad esempio i collider. 
+
+    MOVIMENTO:
+noi per far muovere il personaggio aggiungiamo una proprietà all'oggetto ovvero la Velocity che sarà un Vector2(0,0) 

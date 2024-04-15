@@ -5,3 +5,6 @@ tempo sprecato con degli errori stupidi (in ore):
 obbiettivi di questo platformer:
 
 nel file info ci sono tutte le informazioni sul come fare un platformer in js
+conviene usare più file organizzare meglio le cose
+nel file info userò simboli a inizio paragrafo per far capire a quale dei file mi sto riferendo:
+    ## quando uso questo mi riferisco al file della fisica
