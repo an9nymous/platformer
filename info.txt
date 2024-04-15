@@ -1,0 +1,23 @@
+come schermo possiamo usare un "canvas" dove usiamo 'overflow' per nascondere le 
+barre di scorrimento (ricordiamoci di dare un id al canvas).
+dobbiamo dare un context al canvas  in 2d
+
+funzioni in js:
+dobbiamo salvare il canvas come costante
+possiamo mettere le grandezze dello schermo con "innerwidth" e "innerheight"
+
+essendo che non usiamo un engine non abbiamo il Vector2 lo dobbiamo creare noi usando 
+possiamo usare un oggetto
+
+ricordiamo che non avendo un engine non sappiamo cosa è un gameobj dobbiamo crearlo noi:
+i gameobj hanno 3 cose principali: "POSIZIONE" "SCALA" "ROTAZIONE" (conviene usarli in inglese)
+se non salviamo questi gameobj in un array si complica quindi dobbiamo darli un id che aumenta di uno 
+per ogni oggetto e viene aggiungo nella lista
+
+ora che abbiamo i gameobj dobbiamo metterli a schermo quindi possiamo creare una funzione
+dove bisogna dare un parametro che intende il gameobj e deve avere il fill
+infine lo aggiungiamo nello schermo
+
+FRAME E MOVIMENTO:
+per il frame creiamo una funzione frame dove dopo aver disegnato a schermo aggiungiamo
+una funzione al "windows" dove si chiede un animationFrame dove richiediamo un frame
