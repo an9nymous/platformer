@@ -36,14 +36,14 @@ export function generateMappings(tileType) {
     8: () => [sprite(`${tileType}-tileset`, { anim: "br" }), offscreen()],
     9: () => [
       sprite(`${tileType}-oneway-tileset`, { anim: "tl" }),
-      area({ shape: new Rect(vec2(0), 16, 3) }),
-      "passthrough",
+      area({ shape: new Rect(vec2(0), 16, 3) }), // hitbox custom
+      "passthrough", // è un tag
       body({ isStatic: true }),
       offscreen(),
     ],
     a: () => [
       sprite(`${tileType}-oneway-tileset`, { anim: "tm" }),
-      area({ shape: new Rect(vec2(0), 16, 3) }),
+      area({ shape: new Rect(vec2(0), 16, 3) }), //rect indica rettangolo
       "passthrough",
       body({ isStatic: true }),
       offscreen(),

@@ -27,6 +27,7 @@ const scenes= {
         const lvl1 = new Level()
         lvl1.drawBackground("forest-background")
         lvl1.drawMapLayout(level1Layout, level1Mapping)
+        lvl1.drawWaves("water","wave")
 
     },
     2:()=>{

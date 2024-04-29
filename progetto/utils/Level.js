@@ -1,5 +1,12 @@
 export class Level {
     drawWaves(type, anim) {
+        let offset = -100
+        for (let i = 0; i < 21; i++) {
+          add([sprite(type, { anim }), pos(offset, 600), scale(4), fixed()])
+          offset += 64
+        }
+      }
+    drawWaves(type, anim) {
       let offset = -100
       for (let i = 0; i < 21; i++) {
         add([sprite(type, { anim }), pos(offset, 600), scale(4), fixed()])
