@@ -51,6 +51,10 @@ class UIManager{
             "premi [enter] per iniziare",
             vec2(center().x, center().y+100)
         )
+
+        onKeyPress("enter", () => {
+            go("controls")
+        })
     }
 }
 export const uiManager = new UIManager()
