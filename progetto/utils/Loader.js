@@ -18,6 +18,7 @@ export const load = {
             sliceX:3,
             sliceY:4,
             anims:{ //*è principalmente usata per le animazioni
+                tl:0,
                 tm:1,
                 tr:2,
                 ml:3,

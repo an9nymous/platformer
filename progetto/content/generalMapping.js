@@ -31,9 +31,9 @@ export function generateMappings(tileType) {
       body({ isStatic: true }),
       offscreen(),
     ],
-    6: () => [sprite(`${tileType}-tileset`, { anim: "ml-2" }), offscreen()],
-    7: () => [sprite(`${tileType}-tileset`, { anim: "mm-2" }), offscreen()],
-    8: () => [sprite(`${tileType}-tileset`, { anim: "mr-2" }), offscreen()],
+    6: () => [sprite(`${tileType}-tileset`, { anim: "bl" }), offscreen()],
+    7: () => [sprite(`${tileType}-tileset`, { anim: "bm" }), offscreen()],
+    8: () => [sprite(`${tileType}-tileset`, { anim: "br" }), offscreen()],
     9: () => [
       sprite(`${tileType}-oneway-tileset`, { anim: "tl" }),
       area({ shape: new Rect(vec2(0), 16, 3) }),

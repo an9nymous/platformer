@@ -1,5 +1,5 @@
 import kaboom from "./libs/kaboom.mjs";
-import { level1Layout, lvl1Mapping } from "./content/lvl1/Lvl1Lay.js";
+import { level1Layout, level1Mapping } from "./content/lvl1/Lvl1Lay.js";
 import { Level } from "./utils/Level.js";
 import { uiManager } from "./utils/UIManager.js";
 import { load } from "./utils/Loader.js";
@@ -26,7 +26,7 @@ const scenes= {
     1:()=>{
         const lvl1 = new Level()
         lvl1.drawBackground("forest-background")
-        lvl1.drawMapLayout(level1Layout, lvl1Mapping)
+        lvl1.drawMapLayout(level1Layout, level1Mapping)
 
     },
     2:()=>{
