@@ -9,7 +9,7 @@ import { Camera } from "./utils/Camera.js";
 kaboom({
     width:1280,
     height:720,
-    letterbox:true,  //!Tiene fissi i parametri adattandosi alla schermata 
+    letterbox:true,  //!Tiene fissi i parametri adattandosi alla schermata
 
 })
 load.fonts()
@@ -26,14 +26,14 @@ const scenes= {
         uiManager.displayControlsMenu()
     },
     1:()=>{
+        setGravity(1400)
         const lvl1 = new Level()
         lvl1.drawBackground("forest-background")
         lvl1.drawMapLayout(level1Layout, level1Mapping)
         const player = new Player(1500,100,400,650,3,1,false)
         const camera = new Camera()
-        camera.attach(player.gameObj, 0, -200)
+        camera.attach(player.gameObj, 0, 200)
         lvl1.drawWaves("water","wave-reversed")
-
     },
     2:()=>{
 
