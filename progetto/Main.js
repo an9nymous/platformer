@@ -8,7 +8,9 @@ kaboom({
 
 })
 load.fonts()
+load.sounds()
 load.assets()
+
 //*livelli
 const scenes= {
     menu:()=>{ //menù principale
@@ -16,7 +18,7 @@ const scenes= {
         uiManager.displayMainMenu()
     },
     Controls:()=>{
-
+        uiManager.displayControlsMenu()
     },
     1:()=>{
 
