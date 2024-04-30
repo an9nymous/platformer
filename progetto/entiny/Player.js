@@ -25,12 +25,12 @@ export class Player{
     setPlayerControlls(){
         onKeyDown("left", ()=>{
             if(this.gameObj.curAnim()!== "run") this.gameObj.play("run") //se non è attaccata ad un gameobj 'play' si usa per i suoni
-            this.gameObj.flipX=true
+            this.gameObj.flipX=true //flippa lo sprite sull asse x
             this.gameObj.move(-this.speed,0)
         })
         onKeyDown("right", ()=>{
             if(this.gameObj.curAnim()!== "run") this.gameObj.play("run") 
-            this.gameObj.flipX=false
+            this.gameObj.flipX=false //non flippa lo sprite
             this.gameObj.move(this.speed,0)
         })
         onKeyDown("space", ()=>{
