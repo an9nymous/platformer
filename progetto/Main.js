@@ -39,6 +39,9 @@ const scenes= {
             level1Config.nlive,
             1,
             false)
+            player.enablepassthroug()
+            player.update()
+        
         
         attachedCamera(player.gameObj, 0, 200)
         lvl1.drawWaves("water","wave-reversed")
