@@ -121,6 +121,7 @@ export class Player{
             if (this.coins === coinCountUI.fullCoinCount) {
                 go(this.isInTerminalScene ? "end" : this.currentLevelScene + 1)
             }
+            
         })
       }
 }
