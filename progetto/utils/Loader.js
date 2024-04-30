@@ -11,6 +11,8 @@ export const load = {
         loadSprite("space", "./assets/Space_Key_Dark.png")
 
         loadSprite("forest-background","./assets/Forest_Background_0.png")//* le prime virgolette sono come vogliamo riferirci (come il tag) e le seconde sono il percorso 
+        loadSprite("coin-icon", "./assets/Coins_UI.png")
+        loadSprite("star-ico", "./assets/Stars_Ui.png")
         loadSprite("logo","./assets/Logo.png")
         loadSprite("coin", "./assets/Coin.png")
         loadSprite("bridge", "./assets/Bridge.png")
@@ -81,11 +83,12 @@ export const load = {
               },
             },
           })
-        
+      
     },
     sounds: () => {
         loadSound("confirm-ui", "./sounds/confirm-ui.wav")
         loadSound("jump", "./sounds/jump.wav")
         loadSound("hit", "./sounds/hit.wav")
+        loadSound("coin", "./sounds/coin.wav")
     }
 }

@@ -33,18 +33,23 @@ const scenes= {
         lvl1.drawBackground("forest-background")
         lvl1.drawMapLayout(level1Layout, level1Mapping)
         const player = new Player(level1Config.startPosX,
-            level1Config.startPosY,
-            level1Config.playerSpeed,
+        level1Config.startPosY,
+         level1Config.playerSpeed,
             level1Config.jumpForce,
             level1Config.nlive,
             1,
             false)
             player.enablepassthroug()
             player.update()
-        
-        
-        attachedCamera(player.gameObj, 0, 200)
-        lvl1.drawWaves("water","wave-reversed")
+            player.enableCoin()
+            attachedCamera(player.gameObj, 0, 200)
+            lvl1.drawWaves("water","wave-reversed")
+            uiManager.darkbg()
+            uiManager.displayCoinCount()
+            player.updateCoinCount(uiManager.coinCountUI)
+            uiManager.displayLivesCount()
+            player.updatelivesCount(uiManager.livesCountUI)
+            
     },
     2:()=>{
 
