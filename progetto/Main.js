@@ -4,7 +4,9 @@ import { Level } from "./utils/Level.js";
 import { uiManager } from "./utils/UIManager.js";
 import { load } from "./utils/Loader.js";
 import { Player } from "./entiny/Player.js";
-import { Camera } from "./utils/Camera.js";
+import { attachedCamera } from "./utils/Camera.js"
+import { level1Config } from "./content/lvl1/confing.js";
+
 
 kaboom({
     width:1280,
@@ -26,13 +28,19 @@ const scenes= {
         uiManager.displayControlsMenu()
     },
     1:()=>{
-        setGravity(1400)
+        setGravity(level1Config.gravity)
         const lvl1 = new Level()
         lvl1.drawBackground("forest-background")
         lvl1.drawMapLayout(level1Layout, level1Mapping)
-        const player = new Player(1500,100,400,650,3,1,false)
-        const camera = new Camera()
-        camera.attach(player.gameObj, 0, 200)
+        const player = new Player(level1Config.startPosX,
+            level1Config.startPosY,
+            level1Config.playerSpeed,
+            level1Config.jumpForce,
+            level1Config.nlive,
+            1,
+            false)
+        
+        attachedCamera(player.gameObj, 0, 200)
         lvl1.drawWaves("water","wave-reversed")
     },
     2:()=>{

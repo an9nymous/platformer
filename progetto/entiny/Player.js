@@ -5,6 +5,7 @@ export class Player{
         this.initialX = posX
         this.initialY = posY
         this.makePlayer()
+        this.setPlayerControlls()
         this.speed = speed
         this.jumpoForce = jumpoForce
         this.lives = nLives
@@ -20,5 +21,28 @@ export class Player{
             body(),
             "player",
         ])
+    }
+    setPlayerControlls(){
+        onKeyDown("left", ()=>{
+            if(this.gameObj.curAnim()!== "run") this.gameObj.play("run") //se non è attaccata ad un gameobj 'play' si usa per i suoni
+            this.gameObj.flipX=true
+            this.gameObj.move(-this.speed,0)
+        })
+        onKeyDown("right", ()=>{
+            if(this.gameObj.curAnim()!== "run") this.gameObj.play("run") 
+            this.gameObj.flipX=false
+            this.gameObj.move(this.speed,0)
+        })
+        onKeyDown("space", ()=>{
+            if(this.gameObj.isGrounded()){
+                this.gameObj.jump(this.jumpoForce)
+                play("jump")
+            }
+        })
+        onKeyRelease(()=>{
+            if(isKeyReleased("right") || isKeyReleased("left")){
+                this.gameObj.play("idle")
+            }
+        })
     }
 }
