@@ -4,6 +4,7 @@ class UIManager{
             text("", {
                 font: "Round",
                 size: 50,
+                
         }),
         fixed(),
         pos(70, 10),
@@ -122,11 +123,11 @@ class UIManager{
         )
         onKeyPress("enter", () => {
             play("confirm-ui",{speed: 1.5}) 
-            go(1)
+            go(1)//!cambiarlo per cambiare la scena iniziale
         })
     }
     darkbg(){
-        add([rect(270,130),color(0,0,0),fixed()])
+        add([rect(270,130),color(0,253,255),fixed()])
     }
 }
 export const uiManager = new UIManager()
