@@ -8,18 +8,18 @@ export const load = {
       loadSprite("down", "./assets/Arrow_Down_Key_Dark.png")
       loadSprite("left", "./assets/Arrow_Left_Key_Dark.png")
       loadSprite("right", "./assets/Arrow_Right_Key_Dark.png")
-        loadSprite("space", "./assets/Space_Key_Dark.png")
+      loadSprite("space", "./assets/Space_Key_Dark.png")
 
-        loadSprite("forest-background","./assets/Forest_Background_0.png")//* le prime virgolette sono come vogliamo riferirci (come il tag) e le seconde sono il percorso 
-        loadSprite("caste", "./assets/Castle_background_0.png")
-        loadSprite("sky-background-0", "./assets/Sky_Background_0.png")
-        loadSprite("sky-background-1", "./assets/Sky_Background_1.png")
-        loadSprite("sky-background-2", "./assets/Sky_Background_2.png")
-        loadSprite("coin-icon", "./assets/Coins_UI.png")
-        loadSprite("star-ico", "./assets/Stars_Ui.png")
-        loadSprite("logo","./assets/Logo.png")
-        loadSprite("coin", "./assets/Coin.png")
-        loadSprite("bridge", "./assets/Bridge.png")
+      loadSprite("forest-background","./assets/Forest_Background_0.png")//* le prime virgolette sono come vogliamo riferirci (come il tag) e le seconde sono il percorso 
+      loadSprite("caste", "./assets/Castle_background_0.png")
+      loadSprite("sky-background-0", "./assets/Sky_Background_0.png")
+      loadSprite("sky-background-1", "./assets/Sky_Background_1.png")
+      loadSprite("sky-background-2", "./assets/Sky_Background_2.png")
+      loadSprite("coin-icon", "./assets/Coins_UI.png")
+      loadSprite("star-ico", "./assets/Stars_Ui.png")
+      loadSprite("logo","./assets/Logo.png")
+      loadSprite("coin", "./assets/Coin.png")
+      loadSprite("bridge", "./assets/Bridge.png")
       loadSprite("player", "./assets/Player.png", {
           sliceX: 4,
           sliceY: 6,
