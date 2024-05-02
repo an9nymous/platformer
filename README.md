@@ -1,6 +1,7 @@
 # platformer
 il platformer di alessandro veneziano, filippo bordieri e gabriel superina
 
+un tempo noi 3 e dio sappiamo perche questo codice funziona, ora solo dio lo sa
 tempo sprecato con degli errori stupidi (in ore): 6
 obbiettivi di questo platformer:
 
