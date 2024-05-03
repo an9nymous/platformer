@@ -36,10 +36,11 @@ export class Player{
             if (collision.target.is("passthrough") && isKeyDown("down")) {
                 collision.preventResolution()
             }
-            if(collision.target.is("invisible") && isKeyDown("j")){
+            if(collision.target.is("Portales")){
                 go("segreto")
             }
         })
+        
     }
     enableCoin(){
         this.gameObj.onCollide("coin", (coin)=>{

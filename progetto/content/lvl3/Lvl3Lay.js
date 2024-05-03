@@ -4,9 +4,9 @@ export const level3Mappings = generateMappings("rock")
 
 export const level3Layout = [
   [
-    "                                                                                                                               ",
-    "                                                                               @                                               ",
-    "                                                                                                                               ",
+    "                                                                                                                                 ",
+    "                                                                               @                                                 ",
+    "                                                                                                                                 ",
     "                                                       @       @            9aaaaab                                              ",
     "                                                                            cddddde   @                       @                  ",
     "                                              02      02      02            cddddde                             @                ",

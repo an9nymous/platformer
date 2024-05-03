@@ -18,7 +18,7 @@ export const load = {
       loadSprite("coin-icon", "./assets/Coins_UI.png")
       loadSprite("star-ico", "./assets/Stars_Ui.png")
       loadSprite("logo","./assets/Logo.png")
-      loadSprite("coin", "./assets/Coin.png")
+      
       loadSprite("bridge", "./assets/Bridge.png")
       loadSprite("player", "./assets/Player.png", {
           sliceX: 4,
@@ -38,6 +38,7 @@ export const load = {
             "jump-down": 9,
           },
         })
+      loadSprite("coin", "./assets/Coin.png")
       loadSprite("grass-tileset","./assets/Grass_Tileset.png", {
           sliceX:3,
           sliceY:4,
@@ -197,14 +198,13 @@ export const load = {
             from:8,
             to:15,
             speed:16,
-            loop:false,
+            loop:true,
           },
           close:{
             from:16,
             to:21,
             speed:16,
             loop:false,
-            
           }
         }
       })
