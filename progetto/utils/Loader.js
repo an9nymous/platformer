@@ -183,6 +183,31 @@ export const load = {
           },
         },
       })
+      loadSprite("portale", "./assets/Pportal.png",{
+        sliceX:8,
+        sliceY:3,
+        anims: {
+          idle:{
+            from : 0,
+            to : 7,
+            speed:16,
+            loop:true,
+          },
+          open:{
+            from:8,
+            to:15,
+            speed:16,
+            loop:false,
+          },
+          close:{
+            from:16,
+            to:21,
+            speed:16,
+            loop:false,
+            
+          }
+        }
+      })
     },
     sounds: () => {
         loadSound("confirm-ui", "./sounds/confirm-ui.wav")

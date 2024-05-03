@@ -70,10 +70,16 @@ export function generateMappings(tileType) {
     o: () => [sprite("bridge"), area(), body({ isStatic: true }), offscreen()],
     "@": () => [sprite("coin"), area(), "coin", offscreen()],
     n: () =>[
+      sprite("coin"),
       area({ shape: new Rect(vec2(0), 16, 12) }),
       body({isStatic:true}),
       offscreen(),
       "invisible"
-    ] //* un blocco normale su cui puoi camminare è un rettangolo lungo 16 e alto 12
+    ], //* un blocco normale su cui puoi camminare è un rettangolo lungo 16 e alto 12
+    p:()=>[
+      sprite("portale", {anim: "idle" }),
+      area({ shape: new Rect(vec2(0), 16, 12) }),
+      offscreen()
+    ]
   }
 }
