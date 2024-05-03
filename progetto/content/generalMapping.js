@@ -69,6 +69,11 @@ export function generateMappings(tileType) {
     ],
     o: () => [sprite("bridge"), area(), body({ isStatic: true }), offscreen()],
     "@": () => [sprite("coin"), area(), "coin", offscreen()],
-    // n: () =>[sprite("empty"),area(),body({isStatic:true}),offscreen()]
+    n: () =>[
+      area({ shape: new Rect(vec2(0), 16, 12) }),
+      body({isStatic:true}),
+      offscreen(),
+      "invisible"
+    ] //* un blocco normale su cui puoi camminare è un rettangolo lungo 16 e alto 12
   }
 }

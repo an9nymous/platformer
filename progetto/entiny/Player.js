@@ -36,6 +36,9 @@ export class Player{
             if (collision.target.is("passthrough") && isKeyDown("down")) {
                 collision.preventResolution()
             }
+            if(collision.target.is("invisible") && isKeyDown("j")){
+                go("segreto")
+            }
         })
     }
     enableCoin(){

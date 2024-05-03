@@ -101,6 +101,9 @@ const scenes= {
         uiManager.displayLivesCount()
         player.updatelivesCount(uiManager.livesCountUI)  
     },
+    segreto:()=>{
+
+    },
     gameover:()=>{
 
     },
