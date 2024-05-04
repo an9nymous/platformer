@@ -12,6 +12,9 @@ import { level3Layout, level3Mappings } from "./content/lvl3/Lvl3Lay.js";
 import { level3Config } from "./content/lvl3/config.js";
 import { Spiders } from "./entiny/Spiders.js";
 import { Projectiles } from "./entiny/Projectiles.js";
+import { Axes } from "./entiny/Axes.js";
+import { Saws } from "./entiny/Saw.js";
+import { Birds } from "./entiny/Birds.js";
 
 kaboom({
     width:1280,
@@ -92,6 +95,17 @@ const scenes= {
             "flame"
         )
         flames.setMovPattern()
+        const saw = new Saws(
+            level2Config.sawPositions.map(SawPos => SawPos()),
+            level2Config.sawRanges
+        )
+        saw.SetMovPatt()
+        const axes = new Axes(
+            level2Config.axesPositions.map(axesPos => axesPos()),
+            level2Config.axesSwingDuration
+        )
+        axes.setMovementPattern()
+
         const player = new Player(level2Config.startPosX,
         level2Config.startPosY,
         level2Config.playerSpeed,
@@ -99,10 +113,12 @@ const scenes= {
         level2Config.nlive,
         2,
         false)
+
         player.enablepassthroug()
         player.update()
         player.enableCoin()
         player.enableMobVuln()
+
         attachedCamera(player.gameObj, 0, 200)
         lvl2.drawWaves("lava","wave-reversed")
         // uiManager.darkbg() // *questo è per lo sfondo dell UI
@@ -118,7 +134,11 @@ const scenes= {
         lvl3.drawBackground("sky-background-1")
         lvl3.drawBackground("sky-background-2")
         lvl3.drawMapLayout(level3Layout, level3Mappings)
-
+        const bird = new Birds(
+            level3Config.birdPositions.map(birdPos => birdPos()),
+            level3Config.birdRanges
+        )
+        bird.setMovementPattern()
         const player = new Player(level3Config.startPosX,
         level3Config.startPosY,
         level3Config.playerSpeed,
@@ -129,6 +149,7 @@ const scenes= {
         player.enablepassthroug()
         player.update()
         player.enableCoin()
+        player.enableMobVuln()
         attachedCamera(player.gameObj, 0, 200)
         lvl3.drawWaves("clouds","wave")
         uiManager.darkbg() // *questo è per lo sfondo dell UI
@@ -141,7 +162,7 @@ const scenes= {
 
     },
     gameover:()=>{
-
+        
     },
     end:()=>{
 

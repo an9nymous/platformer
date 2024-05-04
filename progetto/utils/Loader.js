@@ -18,8 +18,9 @@ export const load = {
       loadSprite("coin-icon", "./assets/Coins_UI.png")
       loadSprite("star-ico", "./assets/Stars_Ui.png")
       loadSprite("logo","./assets/Logo.png")
-      
+      loadSprite("axe", "./assets/Axe_trap.png")
       loadSprite("bridge", "./assets/Bridge.png")
+      loadSprite("saw","./assets/Circular_Saw.png")
       loadSprite("player", "./assets/Player.png", {
           sliceX: 4,
           sliceY: 6,
@@ -240,6 +241,18 @@ export const load = {
           }
         }
       })
+      loadSprite("bird", "./assets/Bird_2.png", {
+        sliceX: 3,
+        sliceY: 1,
+        anims: {
+          fly: {
+            from: 0,
+            to: 2,
+            speed: 9,
+            loop: true,
+          },
+        },
+      })
     },
     sounds: () => {
         loadSound("confirm-ui", "./sounds/confirm-ui.wav")
@@ -247,5 +260,8 @@ export const load = {
         loadSound("hit", "./sounds/hit.wav")
         loadSound("coin", "./sounds/coin.wav")
         loadSound("spider-atk", "./sounds/spider-attack.mp3")
+        loadSound("swinging-axe", "./sounds/swinging-axe.mp3")
+        loadSound("saw", "./sounds/saw.wav")
+        loadSound("dive", "./sounds/dive.wav")
     }
 }
