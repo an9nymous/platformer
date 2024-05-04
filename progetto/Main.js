@@ -12,6 +12,8 @@ import { level3Layout, level3Mappings } from "./content/lvl3/Lvl3Lay.js";
 import { level3Config } from "./content/lvl3/config.js";
 import { Spiders } from "./entiny/Spiders.js";
 import { Projectiles } from "./entiny/Projectiles.js";
+import { Axes } from "./entiny/Axes.js";
+import { Saws } from "./entiny/Saw.js";
 
 kaboom({
     width:1280,
@@ -92,6 +94,17 @@ const scenes= {
             "flame"
         )
         flames.setMovPattern()
+        const saw = new Saws(
+            level2Config.sawPositions.map(SawPos => SawPos()),
+            level2Config.sawRanges
+        )
+        saw.SetMovPatt()
+        const axes = new Axes(
+            level2Config.axesPositions.map(axesPos => axesPos()),
+            level2Config.axesSwingDuration
+        )
+        axes.setMovementPattern()
+
         const player = new Player(level2Config.startPosX,
         level2Config.startPosY,
         level2Config.playerSpeed,
@@ -99,10 +112,12 @@ const scenes= {
         level2Config.nlive,
         2,
         false)
+
         player.enablepassthroug()
         player.update()
         player.enableCoin()
         player.enableMobVuln()
+
         attachedCamera(player.gameObj, 0, 200)
         lvl2.drawWaves("lava","wave-reversed")
         // uiManager.darkbg() // *questo è per lo sfondo dell UI
