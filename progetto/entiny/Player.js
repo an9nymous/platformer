@@ -90,6 +90,14 @@ export class Player{
         }
         else go("gameover")
     }
+    enableMobVuln() {
+        function hitAndRespawn(context){
+            play("hit", {speed:1.5})
+            context.respawnPlayer()
+        }
+        this.gameObj.onCollide("spiders", ()=>hitAndRespawn(this))
+    }
+
     update(){
         onUpdate(() =>{
             this.heightDelta = this.previousHeight - this.gameObj.pos.y

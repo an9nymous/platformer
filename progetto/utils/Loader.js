@@ -39,6 +39,22 @@ export const load = {
           },
         })
       loadSprite("coin", "./assets/Coin.png")
+      loadSprite("spider-1", "./assets/Spider_1.png", {
+        sliceX: 3,
+        sliceY: 1,
+        anims: {
+          crawl: { from: 0, to: 2, loop: true },
+          idle: 0,
+        },
+      })
+      loadSprite("spider-2", "./assets/Spider_2.png", {
+        sliceX: 3,
+        sliceY: 1,
+        anims: {
+          crawl: { from: 0, to: 2, loop: true },
+          idle: 0,
+        },
+      })
       loadSprite("grass-tileset","./assets/Grass_Tileset.png", {
           sliceX:3,
           sliceY:4,
@@ -184,7 +200,7 @@ export const load = {
           },
         },
       })
-      loadSprite("portale", "./assets/Pportal.png",{
+      loadSprite("portale", "./assets/PPortal.png",{
         sliceX:8,
         sliceY:3,
         anims: {
@@ -214,5 +230,6 @@ export const load = {
         loadSound("jump", "./sounds/jump.wav")
         loadSound("hit", "./sounds/hit.wav")
         loadSound("coin", "./sounds/coin.wav")
+        loadSound("spider-atk", "./sounds/spider-attack.mp3")
     }
 }

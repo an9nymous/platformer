@@ -10,6 +10,8 @@ import { level2Layout, level2Mappings } from "./content/lvl2/Lvl2Lay.js";
 import { level2Config } from "./content/lvl2/config.js";
 import { level3Layout, level3Mappings } from "./content/lvl3/Lvl3Lay.js";
 import { level3Config } from "./content/lvl3/config.js";
+import { Spiders } from "./entiny/Spiders.js";
+
 kaboom({
     width:1280,
     height:720,
@@ -44,14 +46,23 @@ const scenes= {
         player.enablepassthroug()
         player.update()
         player.enableCoin()
+        player.enableMobVuln()
         attachedCamera(player.gameObj, 0, 200)
+        const spiders = new Spiders(
+            level1Config.spiderPositions.map(spiderPos => spiderPos()), //posizione
+            level1Config.spiderRange,  //di quanto si muove in pixel
+            level1Config.spiderSpeeds, //velocità
+            level1Config.spiderType //tipo ragno
+        )
+        spiders.setMovementPattern()
+        spiders.enablePassthrough()
         lvl1.drawWaves("water","wave-reversed")
         // uiManager.darkbg() // *questo è per lo sfondo dell UI
         uiManager.displayCoinCount()
         player.updateCoinCount(uiManager.coinCountUI)
         uiManager.displayLivesCount()
         player.updatelivesCount(uiManager.livesCountUI)
-            
+        
     },
     2:()=>{
         setGravity(level2Config.gravity)
