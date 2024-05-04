@@ -11,6 +11,8 @@ import { level2Config } from "./content/lvl2/config.js";
 import { level3Layout, level3Mappings } from "./content/lvl3/Lvl3Lay.js";
 import { level3Config } from "./content/lvl3/config.js";
 import { Spiders } from "./entiny/Spiders.js";
+import { Axes } from "./entiny/Axes.js"
+import { Saws } from "./entiny/Saw.js"
 import { Projectiles } from "./entiny/Projectiles.js";
 import { Birds } from "./entiny/Birds.js";
 
@@ -34,6 +36,10 @@ const scenes= {
         uiManager.displayControlsMenu()
     },
     1:()=>{
+        const ambience1 = play("water-ambience", {volume : 0.1, loop:true})
+        onSceneLeave(()=>{
+            ambience1.paused = true
+        })
         setGravity(level1Config.gravity)
         const lvl1 = new Level()
         lvl1.drawBackground("forest-background")
@@ -74,6 +80,10 @@ const scenes= {
         
     },
     2:()=>{
+        const ambience2 = play("lava-ambience", {volume : 0.1, loop:true})
+        onSceneLeave(()=>{
+            ambience2.paused = true
+        })
         setGravity(level2Config.gravity)
         const lvl2 = new Level()
         lvl2.drawBackground("caste")
@@ -126,6 +136,10 @@ const scenes= {
         player.updatelivesCount(uiManager.livesCountUI)  
     },
     3:() =>{
+        const ambience3 = play("strong-wind", {volume : 0.1, loop:true})
+        onSceneLeave(()=>{
+            ambience3.paused = true
+        })
         setGravity(level3Config.gravity)
         const lvl3 = new Level()
         lvl3.drawBackground("sky-background-0")
@@ -160,10 +174,10 @@ const scenes= {
 
     },
     gameover:()=>{
-        
+        uiManager.displayGameOverScreen()
     },
     end:()=>{
-
+        uiManager.displayEndGameScreen()
     }
 };
 

@@ -95,10 +95,12 @@ export class Player{
             play("hit", {speed:1.5})
             context.respawnPlayer()
         }
-        this.gameObj.onCollide("spiders", ()=>hitAndRespawn(this))
-        this.gameObj.onCollide("flame", ()=>hitAndRespawn(this))
-        this.gameObj.onCollide("fish", ()=>hitAndRespawn(this))
-        this.gameObj.onCollide("saw", ()=>hitAndRespawn(this))
+        // this.gameObj.onCollide("spiders", ()=>hitAndRespawn(this))
+        // this.gameObj.onCollide("flame", ()=>hitAndRespawn(this))
+        // this.gameObj.onCollide("fish", ()=>hitAndRespawn(this))
+        // this.gameObj.onCollide("axes", ()=>hitAndRespawn(this))
+        // this.gameObj.onCollide("birds", ()=>hitAndRespawn(this))
+        // this.gameObj.onCollide("saws", ()=>hitAndRespawn(this))
     }
 
     update(){

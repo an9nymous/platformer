@@ -123,7 +123,45 @@ class UIManager{
         )
         onKeyPress("enter", () => {
             play("confirm-ui",{speed: 1.5}) 
-            go(3)//!cambiarlo per cambiare la scena iniziale
+            go(1)//!cambiarlo per cambiare la scena iniziale
+        })
+    }
+    displayGameOverScreen() {
+        add([rect(1280, 720), color(0, 0, 0)])
+        add([
+          text("SEI MORTO!", { size: 50, font: "Round" }),
+          area(),
+          anchor("center"),
+          pos(center()),
+        ])
+    
+        this.displayBlinkingUIMessage(
+          "premi [ enter ] per riprovare",
+          vec2(center().x, center().y + 100)
+        )
+    
+        onKeyPress("enter", () => {
+          play("confirm-ui")
+          go(1)
+        })
+      }
+    displayEndGameScreen() {
+        add([rect(1280, 720), color(0, 0, 0)])
+        add([
+            text("hai vinto! grazie per aver giocato", { size: 50, font: "Round" }),
+            area(),
+            anchor("center"),
+            pos(center()),
+        ])
+
+        this.displayBlinkingUIMessage(
+            "premi [ Enter ] per giocare ancora",
+            vec2(center().x, center().y + 100)
+        )
+
+        onKeyPress("enter", () => {
+            play("confirm-ui")
+            go("menu")
         })
     }
     darkbg(){
