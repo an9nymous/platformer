@@ -11,6 +11,7 @@ import { level2Config } from "./content/lvl2/config.js";
 import { level3Layout, level3Mappings } from "./content/lvl3/Lvl3Lay.js";
 import { level3Config } from "./content/lvl3/config.js";
 import { Spiders } from "./entiny/Spiders.js";
+import { Projectiles } from "./entiny/Projectiles.js";
 
 kaboom({
     width:1280,
@@ -56,6 +57,13 @@ const scenes= {
         )
         spiders.setMovementPattern()
         spiders.enablePassthrough()
+        const fish = new Projectiles(
+            level1Config.fishPositions.map(fishPos => fishPos()),
+            level1Config.fishAmplitudes,
+            "fish"
+        )
+        fish.setMovPattern()
+        
         lvl1.drawWaves("water","wave-reversed")
         // uiManager.darkbg() // *questo è per lo sfondo dell UI
         uiManager.displayCoinCount()
@@ -69,6 +77,21 @@ const scenes= {
         const lvl2 = new Level()
         lvl2.drawBackground("caste")
         lvl2.drawMapLayout(level2Layout, level2Mappings)
+        const spiders = new Spiders(
+            level2Config.spiderPositions.map(spiderPos => spiderPos()), //posizione
+            level2Config.spiderRange,  //di quanto si muove in pixel
+            level2Config.spiderSpeeds, //velocità
+            level2Config.spiderType
+        )
+        spiders.setMovementPattern()
+        spiders.enablePassthrough()
+        
+        const flames = new Projectiles(
+            level2Config.flamePositions.map(flamePos => flamePos()),
+            level2Config.flameRange,
+            "flame"
+        )
+        flames.setMovPattern()
         const player = new Player(level2Config.startPosX,
         level2Config.startPosY,
         level2Config.playerSpeed,
@@ -79,6 +102,7 @@ const scenes= {
         player.enablepassthroug()
         player.update()
         player.enableCoin()
+        player.enableMobVuln()
         attachedCamera(player.gameObj, 0, 200)
         lvl2.drawWaves("lava","wave-reversed")
         // uiManager.darkbg() // *questo è per lo sfondo dell UI
@@ -94,6 +118,7 @@ const scenes= {
         lvl3.drawBackground("sky-background-1")
         lvl3.drawBackground("sky-background-2")
         lvl3.drawMapLayout(level3Layout, level3Mappings)
+
         const player = new Player(level3Config.startPosX,
         level3Config.startPosY,
         level3Config.playerSpeed,
