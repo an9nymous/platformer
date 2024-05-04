@@ -12,6 +12,7 @@ import { level3Layout, level3Mappings } from "./content/lvl3/Lvl3Lay.js";
 import { level3Config } from "./content/lvl3/config.js";
 import { Spiders } from "./entiny/Spiders.js";
 import { Projectiles } from "./entiny/Projectiles.js";
+import { Birds } from "./entiny/Birds.js";
 
 kaboom({
     width:1280,
