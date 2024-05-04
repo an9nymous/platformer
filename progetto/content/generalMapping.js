@@ -90,6 +90,24 @@ export function generateMappings(tileType) {
       offscreen(),
       anchor("right"),
       "Portales"
+    ],
+    f:()=>[
+      sprite("platform", {anim:"l"}),
+      area(),
+      body({isStatic:true}),
+      "piattaforma"
+    ],
+    g:()=>[
+      sprite("platform", {anim:"m"}),
+      area(),
+      body({isStatic:true}),
+      "piattaforma"
+    ],
+    h:()=>[
+      sprite("platform", {anim:"r"}),
+      area(),
+      body({isStatic:true}),
+      "piattaforma"
     ]
   }
 }

@@ -15,8 +15,9 @@ export const load = {
       loadSprite("sky-background-0", "./assets/Sky_Background_0.png")
       loadSprite("sky-background-1", "./assets/Sky_Background_1.png")
       loadSprite("sky-background-2", "./assets/Sky_Background_2.png")
+      loadSprite("skybg", "./assets/skybg.jpeg")
       loadSprite("coin-icon", "./assets/Coins_UI.png")
-      loadSprite("star-ico", "./assets/Stars_Ui.png")
+      loadSprite("star-ico", "./assets/quore.png")
       loadSprite("logo","./assets/Logo.png")
       loadSprite("axe", "./assets/Axe_trap.png")
       loadSprite("bridge", "./assets/Bridge.png")
@@ -199,6 +200,21 @@ export const load = {
           br: 8,
         },
       })
+      loadSprite("Cloud-tileset", "./assets/Cloud_Tileset.png", {
+        sliceX: 3,
+        sliceY: 4,
+        anims: {
+          tl: 0,
+          tm: 1,
+          tr: 2,
+          ml: 3,
+          mm: 4,
+          mr: 5,
+          bl: 6,
+          bm: 7,
+          br: 8,
+        },
+      })
       loadSprite("clouds", "./assets/Clouds.png", {
         sliceX: 8,
         sliceY: 1,
@@ -252,6 +268,15 @@ export const load = {
             loop: true,
           },
         },
+      })
+      loadSprite("platform", "./assets/Platform.png",{
+        sliceX:3,
+        sliceY:1,
+        anims:{
+          l:0,
+          m:1,
+          r:2
+        }
       })
     },
     sounds: () => {

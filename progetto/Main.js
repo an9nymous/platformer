@@ -15,7 +15,8 @@ import { Axes } from "./entiny/Axes.js"
 import { Saws } from "./entiny/Saw.js"
 import { Projectiles } from "./entiny/Projectiles.js";
 import { Birds } from "./entiny/Birds.js";
-
+import { levelSLayout, levelSMappings } from "./content/lvlsecreto/LvlsegLay.js";
+import { levelSConfig } from "./content/lvlsecreto/config.js"
 kaboom({
     width:1280,
     height:720,
@@ -171,7 +172,21 @@ const scenes= {
         player.updatelivesCount(uiManager.livesCountUI)  
     },
     segreto:()=>{
-
+        const lvlS = new Level()
+        lvlS.drawBackground("skybg")
+        lvlS.drawMapLayout(levelSLayout, levelSMappings)
+        const player = new Player(levelSConfig.startPosX,
+            levelSConfig.startPosY,
+            levelSConfig.playerSpeed,
+            levelSConfig.jumpForce,
+            levelSConfig.nlive,
+            1,
+            false)
+        player.enablepassthroug()
+        player.update()
+        player.enableCoin()
+        player.enableMobVuln()
+        attachedCamera(player.gameObj, 0, 200)
     },
     gameover:()=>{
         uiManager.displayGameOverScreen()
