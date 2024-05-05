@@ -22,6 +22,11 @@ export const load = {
       loadSprite("axe", "./assets/Axe_trap.png")
       loadSprite("bridge", "./assets/Bridge.png")
       loadSprite("saw","./assets/Circular_Saw.png")
+      //sfondo lvl segreto
+      loadSprite("bga", "./assets/sfondo/1.png")
+      loadSprite("bgb", "./assets/sfondo/2.png")
+      loadSprite("bgc", "./assets/sfondo/3.png")
+      loadSprite("bgd", "./assets/sfondo/4.png")
       loadSprite("player", "./assets/Player.png", {
           sliceX: 4,
           sliceY: 6,

@@ -173,7 +173,10 @@ const scenes= {
     },
     segreto:()=>{
         const lvlS = new Level()
-        lvlS.drawBackground("skybg")
+        lvlS.drawBackground("bga")
+        lvlS.drawBackground("bgb")
+        lvlS.drawBackground("bgc")
+        lvlS.drawBackground("bgd")
         lvlS.drawMapLayout(levelSLayout, levelSMappings)
         const player = new Player(levelSConfig.startPosX,
             levelSConfig.startPosY,
@@ -185,7 +188,7 @@ const scenes= {
         player.enablepassthroug()
         player.update()
         player.enableCoin()
-        player.enableMobVuln()
+        
         attachedCamera(player.gameObj, 0, 200)
     },
     gameover:()=>{
