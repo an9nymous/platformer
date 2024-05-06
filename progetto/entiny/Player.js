@@ -29,7 +29,7 @@ export class Player{
         ])
     }
     enablepassthroug(){ //migliora il passaggio tra i collider
-        this.gameObj.onBeforePhysicsResolve((collision) => {
+        this.gameObj.onBeforePhysicsResolve(async (collision) => {
             if(collision.target.is("passthrough") && this.gameObj.isJumping()){ 
                 collision.preventResolution() //?disattiva il comando
             }
@@ -37,6 +37,8 @@ export class Player{
                 collision.preventResolution()
             }
             if(collision.target.is("Portales")){
+                go("nigga")
+                await new Promise(resolve => setTimeout(resolve, 3000))
                 go("segreto")
             }
         })

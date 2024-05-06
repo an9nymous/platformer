@@ -76,8 +76,8 @@ export function generateMappings(tileType) {
       offscreen(),
       "invisible"
     ], //* un blocco normale su cui puoi camminare è un rettangolo lungo 16 e alto 12
-    p:()=>[ //portale segreto
-      sprite("portale", {anim: "idle" }),
+    p:()=>[ //portale segreto viola
+      sprite("portalePurple", {anim: "idle" }),
       pos(),
       area({shape: new Rect(vec2(0),16,49)}),
       anchor("bot"),
@@ -108,6 +108,15 @@ export function generateMappings(tileType) {
       area(),
       body({isStatic:true}),
       "piattaforma"
-    ]
+    ],
+    k:()=>[ //portale segreto verde
+      sprite("portaleGreen", {anim: "idle" }),
+      
+      pos(),
+      area({shape: new Rect(vec2(0),16,49)}),
+      anchor("bot"),
+      offscreen(),
+      "Portals"
+    ],
   }
 }

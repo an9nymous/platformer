@@ -29,6 +29,9 @@ load.assets()
 
 //*livelli
 const scenes= {
+    nigga:()=>{
+        add([text("test"),pos(500,500),color(0,0,0)])
+    },
     menu:()=>{ //menù principale
         // add([text("test"),pos(500,500),color(0,0,0)])
         uiManager.displayMainMenu()
@@ -190,6 +193,14 @@ const scenes= {
         player.enableCoin()
         
         attachedCamera(player.gameObj, 0, 200)
+        uiManager.darkbg() // *questo è per lo sfondo dell UI
+        uiManager.displayCoinCount()
+        player.updateCoinCount(uiManager.coinCountUI)
+        uiManager.displayLivesCount()
+        player.updatelivesCount(uiManager.livesCountUI)
+    },
+    segretofs:()=>{
+
     },
     gameover:()=>{
         uiManager.displayGameOverScreen()

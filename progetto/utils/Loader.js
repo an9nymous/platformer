@@ -238,7 +238,31 @@ export const load = {
           },
         },
       })
-      loadSprite("portale", "./assets/PPortal.png",{
+      loadSprite("portalePurple", "./assets/PPortal.png",{
+        sliceX:8,
+        sliceY:3,
+        anims: {
+          idle:{
+            from : 0,
+            to : 7,
+            speed:16,
+            loop:true,
+          },
+          open:{
+            from:8,
+            to:15,
+            speed:16,
+            loop:true,
+          },
+          close:{
+            from:16,
+            to:21,
+            speed:16,
+            loop:false,
+          }
+        }
+      })
+      loadSprite("portaleGreen", "./assets/GPortal.png",{
         sliceX:8,
         sliceY:3,
         anims: {
@@ -283,6 +307,7 @@ export const load = {
           r:2
         }
       })
+      
     },
     sounds: () => {
         loadSound("confirm-ui", "./sounds/confirm-ui.wav")
