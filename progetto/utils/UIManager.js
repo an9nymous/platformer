@@ -87,6 +87,30 @@ class UIManager{
             go("Controls")
         })
     }
+    displayTextMenu(){
+        const testo = `
+        non dovresti essere qui, \n
+        anche tu stai aspettando? \n
+        sono 4 anni che aspetto il\n
+        commonwealth?\n
+        non e' mai arrivato...
+        `
+        add([
+            sprite("blackbg"),
+            scale(4)
+        ])
+        add([text(testo),pos(400,100),color(255,0,0),{font:"creepy", size:50}])
+
+        this.displayBlinkingUIMessage(
+            "premi [enter] per iniziare",
+            vec2(center().x, center().y+300)
+        )
+
+        onKeyPress("enter", () => {
+            play("confirm-ui",{speed: 1.5}) //dovo aver caricato il suono permette di utilizzarlo
+            go("segreto")
+        })
+    }
     displayControlsMenu(){
         add([
             sprite("forest-background"),
@@ -123,7 +147,7 @@ class UIManager{
         )
         onKeyPress("enter", () => {
             play("confirm-ui",{speed: 1.5}) 
-            go(1)//!cambiarlo per cambiare la scena iniziale
+            go("nigga")//!cambiarlo per cambiare la scena iniziale
         })
     }
     displayGameOverScreen() {

@@ -37,9 +37,8 @@ export class Player{
                 collision.preventResolution()
             }
             if(collision.target.is("Portales")){
+                
                 go("nigga")
-                await new Promise(resolve => setTimeout(resolve, 3000))
-                go("segreto")
             }
         })
         

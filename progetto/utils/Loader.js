@@ -1,6 +1,7 @@
 export const load = {
     fonts : () => {
         loadFont("Round","./assets/Round9x13.ttf")
+        loadFont("creepy", "./assets/creepy.ttf")
     },
     assets:()=>{
         //?immagini dei controlli
@@ -22,6 +23,8 @@ export const load = {
       loadSprite("axe", "./assets/Axe_trap.png")
       loadSprite("bridge", "./assets/Bridge.png")
       loadSprite("saw","./assets/Circular_Saw.png")
+      //sfondo nero
+      loadSprite("blackbg","./assets/blackbg.png")
       //sfondo lvl segreto
       loadSprite("bga", "./assets/sfondo/1.png")
       loadSprite("bgb", "./assets/sfondo/2.png")

@@ -30,7 +30,7 @@ load.assets()
 //*livelli
 const scenes= {
     nigga:()=>{
-        add([text("test"),pos(500,500),color(0,0,0)])
+        uiManager.displayTextMenu()
     },
     menu:()=>{ //menù principale
         // add([text("test"),pos(500,500),color(0,0,0)])
@@ -198,9 +198,6 @@ const scenes= {
         player.updateCoinCount(uiManager.coinCountUI)
         uiManager.displayLivesCount()
         player.updatelivesCount(uiManager.livesCountUI)
-    },
-    segretofs:()=>{
-
     },
     gameover:()=>{
         uiManager.displayGameOverScreen()
