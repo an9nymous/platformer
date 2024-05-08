@@ -99,7 +99,7 @@ class UIManager{
             sprite("blackbg"),
             scale(4)
         ])
-        add([text(testo),pos(400,100),color(255,0,0),{font:"creepy", size:50}])
+        add([text(testo),pos(400,100),color(255,0,0),{font:"creepy", size:80}])
 
         this.displayBlinkingUIMessage(
             "premi [enter] per iniziare",
@@ -147,7 +147,7 @@ class UIManager{
         )
         onKeyPress("enter", () => {
             play("confirm-ui",{speed: 1.5}) 
-            go("nigga")//!cambiarlo per cambiare la scena iniziale
+            go(1)//!cambiarlo per cambiare la scena iniziale
         })
     }
     displayGameOverScreen() {

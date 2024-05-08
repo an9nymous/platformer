@@ -40,6 +40,9 @@ export class Player{
                 
                 go("nigga")
             }
+            if(collision.target.is("GPortales")){
+                go(1)
+            }
         })
         
     }

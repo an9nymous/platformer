@@ -116,7 +116,14 @@ export function generateMappings(tileType) {
       area({shape: new Rect(vec2(0),16,49)}),
       anchor("bot"),
       offscreen(),
-      "Portals"
+      "GPortals"
+    ],
+    j: () =>[ //*blocco invisibile su cui di passaggio portale verde
+      area({ shape: new Rect(vec2(0), 16, 12) }),
+      body({isStatic:true}),
+      offscreen(),
+      anchor("left"),
+      "GPortales"
     ],
   }
 }

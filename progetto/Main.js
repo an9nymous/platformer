@@ -193,7 +193,6 @@ const scenes= {
         player.enableCoin()
         
         attachedCamera(player.gameObj, 0, 200)
-        uiManager.darkbg() // *questo è per lo sfondo dell UI
         uiManager.displayCoinCount()
         player.updateCoinCount(uiManager.coinCountUI)
         uiManager.displayLivesCount()

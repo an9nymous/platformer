@@ -1,5 +1,5 @@
 export const levelSConfig = {
-    gravity:1000,
+    gravity:1400,
     playerSpeed: 400,
     jumpForce: 650,
     nlive:3,
