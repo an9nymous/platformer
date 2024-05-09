@@ -17,6 +17,8 @@ import { Projectiles } from "./entiny/Projectiles.js";
 import { Birds } from "./entiny/Birds.js";
 import { levelSLayout, levelSMappings } from "./content/lvlsecreto/LvlsegLay.js";
 import { levelSConfig } from "./content/lvlsecreto/config.js"
+import { calcol } from "./utils/Calcol.js";
+
 kaboom({
     width:1280,
     height:720,
@@ -29,7 +31,7 @@ load.assets()
 
 //*livelli
 const scenes= {
-    nigga:()=>{
+    testo:()=>{
         uiManager.displayTextMenu()
     },
     menu:()=>{ //menù principale
@@ -191,22 +193,32 @@ const scenes= {
         player.enablepassthroug()
         player.update()
         player.enableCoin()
-        
+        calcol.EnableCalcul()
+        add([text("dopo essere entrato prova \na premere i numeri"),pos(7000,80)])
         attachedCamera(player.gameObj, 0, 200)
         uiManager.displayCoinCount()
         player.updateCoinCount(uiManager.coinCountUI)
         uiManager.displayLivesCount()
         player.updatelivesCount(uiManager.livesCountUI)
+        
+    },
+    nuovo:()=>{
+        calcol.EnableCalcul()
+        add([sprite("blackbg"),scale(4)])
+        add([sprite("calc"),scale(0.5), pos(center().x,center().y+50),area(),anchor("center")])
+        calcol.buf()
     },
     gameover:()=>{
         uiManager.displayGameOverScreen()
     },
     end:()=>{
         uiManager.displayEndGameScreen()
+
     }
 };
 
 for(const key in scenes){
     scene(key, scenes[key])
 }
-go("menu")
+go("nuovo")
+// go("menu")

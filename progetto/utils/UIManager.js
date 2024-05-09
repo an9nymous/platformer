@@ -91,7 +91,7 @@ class UIManager{
         const testo = `
         non dovresti essere qui, \n
         anche tu stai aspettando? \n
-        sono 4 anni che aspetto il\n
+        sono 3 anni che aspetto il\n
         commonwealth?\n
         non e' mai arrivato...
         `

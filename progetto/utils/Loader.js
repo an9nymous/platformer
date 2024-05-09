@@ -72,7 +72,7 @@ export const load = {
           swim: { from: 0, to: 1, loop: true },
         },
       })
-
+      loadSprite("calc", "./assets/calclulator.png")
       loadSprite("flame", "./assets/Flame_1.png", {
         sliceX: 2,
         sliceY: 1,

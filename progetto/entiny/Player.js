@@ -1,3 +1,5 @@
+import { calcol } from "../utils/Calcol.js"
+
 export class Player{
     heightDelta=0
     isRespawning = false
@@ -5,6 +7,7 @@ export class Player{
     coyotelapse = 0.1
     hasJumped = false
     coins=0
+    secret=false
     constructor(posX, posY, speed, jumpoForce, nLives, CurrentLevelScen, isInTerminalScene){
         this.isInTerminalScene = isInTerminalScene
         this.CurrentLevelScen = CurrentLevelScen
@@ -36,12 +39,11 @@ export class Player{
             if (collision.target.is("passthrough") && isKeyDown("down")) {
                 collision.preventResolution()
             }
-            if(collision.target.is("Portales")){
-                
-                go("nigga")
+            if(collision.target.is("Portales")){//portale viola
+                go("testo")
             }
-            if(collision.target.is("GPortales")){
-                go(1)
+            if(collision.target.is("GPortales")){//portale verde
+                go(1) 
             }
         })
         
@@ -84,6 +86,11 @@ export class Player{
                 this.isMoving = false
             }
         })
+    }
+    calcol(){
+        if(this.secret){
+            calcol.EnableCalcul()
+        }
     }
     respawnPlayer(){
         if(this.lives >0){
@@ -128,7 +135,7 @@ export class Player{
             if(!this.gameObj.isGrounded() &&  this.heightDelta <0 && this.gameObj.curAnim() !== "jump-down"){
                 this.gameObj.play("jump-down")
             }
-
+            this.calcol()
         })
     }
     updatelivesCount(livesCountUI){
