@@ -179,7 +179,7 @@ class UIManager{
             color(0,0,0)
         ])
         add([rect(4000,4000),color(171, 130, 7),fixed(), pos(center().x-900,center().y+220)])
-        add([text("ora che hai il codice puoi andare al livello segreto a destra")])
+        add([text("ora che hai il codice puoi andare al livello segreto a destra", {font:"Round"}),fixed(), pos(center().x-625,center().y+300)])
         this.displayBlinkingUIMessage(
             "premi [ Enter ] per giocare ancora",
             vec2(center().x, center().y + 250),
