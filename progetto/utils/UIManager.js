@@ -78,7 +78,7 @@ class UIManager{
             pos(center().x,center().y - 200)
         ])
         this.displayBlinkingUIMessage(
-            "premi [enter] per iniziare",
+            "premi [ enter ] per iniziare",
             vec2(center().x, center().y+100)
         )
 
@@ -102,7 +102,7 @@ class UIManager{
         add([text(testo),pos(400,100),color(255,0,0),{font:"creepy", size:80}])
 
         this.displayBlinkingUIMessage(
-            "premi [enter] per iniziare",
+            "premi [ enter ] per iniziare",
             vec2(center().x, center().y+300)
         )
 
