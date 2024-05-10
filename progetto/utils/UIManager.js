@@ -7,7 +7,7 @@ class UIManager{
                 
         }),
         fixed(),
-        pos(70, 10),
+        pos(70, 200),
         ])
         this.livesCountUI.add([sprite("star-ico"), pos(-60,-5),scale(3),fixed()])
     }
@@ -23,7 +23,7 @@ class UIManager{
                 //?recursive indica che verrà rifatto per assicurarsi di averl icontati tutti
           },
           fixed(),
-          pos(70, 70),
+          pos(70, 250),
         ])
     
         this.coinCountUI.add([sprite("coin-icon"), pos(-60, 0), scale(3), fixed()])
@@ -170,17 +170,18 @@ class UIManager{
         })
       }
     displayEndGameScreen() {
-        add([rect(1280, 720), color(0, 0, 0)])
+        add([sprite("trofeo"),scale(2), fixed()])
         add([
             text("hai vinto! grazie per aver giocato", { size: 50, font: "Round" }),
             area(),
             anchor("center"),
             pos(center()),
+            color(0,0,0)
         ])
-
+        add([rect(4000,4000),color(171, 130, 7),fixed(), pos(center().x-900,center().y+220)])
         this.displayBlinkingUIMessage(
             "premi [ Enter ] per giocare ancora",
-            vec2(center().x, center().y + 100)
+            vec2(center().x, center().y + 250),
         )
 
         onKeyPress("enter", () => {
@@ -189,7 +190,7 @@ class UIManager{
         })
     }
     darkbg(){
-        add([rect(270,130),color(0,253,255),fixed()])
+        add([rect(270,130),color(0,253,255),fixed(),pos(center().x-650,center().y-185)])
     }
 }
 export const uiManager = new UIManager()

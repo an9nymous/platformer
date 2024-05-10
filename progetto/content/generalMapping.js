@@ -70,7 +70,6 @@ export function generateMappings(tileType) {
     o: () => [sprite("bridge"), area(), body({ isStatic: true }), offscreen()],
     "@": () => [sprite("coin"), area(), "coin", offscreen()],
     n: () =>[ //*blocco invisibile su cui si può stare
-      sprite("star-ico"),
       area({ shape: new Rect(vec2(0), 16, 12) }),
       body({isStatic:true}),
       offscreen(),

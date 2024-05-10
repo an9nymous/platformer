@@ -57,6 +57,13 @@ const scenes= {
         level1Config.nlive,
         1,
         false)
+        add([
+            text(3,{
+                size:20 
+            }),
+            color(148, 110, 35),
+            pos(5003,145)
+        ])
         player.enablepassthroug()
         player.update()
         player.enableCoin()
@@ -119,7 +126,7 @@ const scenes= {
             level2Config.axesSwingDuration
         )
         axes.setMovementPattern()
-
+        
         const player = new Player(level2Config.startPosX,
         level2Config.startPosY,
         level2Config.playerSpeed,
@@ -127,7 +134,13 @@ const scenes= {
         level2Config.nlive,
         2,
         false)
-
+        add([
+            text(9,{
+                size:16 
+            }),
+            color(255,0,0),
+            pos(5003,490)
+        ])
         player.enablepassthroug()
         player.update()
         player.enableCoin()
@@ -170,6 +183,14 @@ const scenes= {
         player.enableMobVuln()
         attachedCamera(player.gameObj, 0, 200)
         lvl3.drawWaves("clouds","wave")
+        add([
+            text(2,{
+                size:20 
+            }),
+            color(235, 236, 242),
+            pos(center().x,center().y-150),
+            fixed()
+        ])
         uiManager.darkbg() // *questo è per lo sfondo dell UI
         uiManager.displayCoinCount()
         player.updateCoinCount(uiManager.coinCountUI)
@@ -212,13 +233,14 @@ const scenes= {
         uiManager.displayGameOverScreen()
     },
     end:()=>{
+        
         uiManager.displayEndGameScreen()
-
+        
     }
 };
 
 for(const key in scenes){
     scene(key, scenes[key])
 }
-go("nuovo")
-// go("menu")
+// go("nuovo")
+go("menu")
