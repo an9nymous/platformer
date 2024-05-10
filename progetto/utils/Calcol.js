@@ -1,7 +1,6 @@
 class Calcol{
     buffer =""
     write = true
-    input=""
     testos=`non puoi cancellare stai attento a cosa fai\nquando rispondi all'indovinello premi invio`
     indovino=`
     scegli il tuo personaggio,\n 
@@ -74,7 +73,7 @@ class Calcol{
                 ])
             }
             if(this.input == 18392 && this.test==true){
-                console.log("funziona")
+                go("testo")
                 this.input=""
             }
         })

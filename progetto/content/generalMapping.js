@@ -124,5 +124,10 @@ export function generateMappings(tileType) {
       anchor("left"),
       "GPortales"
     ],
+    z:()=>[
+      sprite("button"),
+      area(),
+      scale(0.04)
+    ],
   }
 }

@@ -40,7 +40,7 @@ export class Player{
                 collision.preventResolution()
             }
             if(collision.target.is("Portales")){//portale viola
-                go("testo")
+                go("nuovo")
             }
             if(collision.target.is("GPortales")){//portale verde
                 go(1) 

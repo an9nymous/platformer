@@ -215,7 +215,6 @@ const scenes= {
         player.update()
         player.enableCoin()
         calcol.EnableCalcul()
-        add([text("dopo essere entrato prova \na premere i numeri"),pos(7000,80)])
         attachedCamera(player.gameObj, 0, 200)
         uiManager.displayCoinCount()
         player.updateCoinCount(uiManager.coinCountUI)

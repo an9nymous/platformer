@@ -82,6 +82,7 @@ export const load = {
           burn: { from: 0, to: 1, loop: true },
         },
       })
+      loadSprite("button", "./assets/button.png")
       
       loadSprite("grass-tileset","./assets/Grass_Tileset.png", {
           sliceX:3,
