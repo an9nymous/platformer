@@ -72,14 +72,14 @@ class UIManager{
         ])
         add([
             sprite("logo"),
-            scale(6),
+            // scale(),
             area(),
             anchor("center"), //! è ancorato al centro NON è posizionato al centro
-            pos(center().x,center().y - 200)
+            pos(center().x,center().y - 100)
         ])
         this.displayBlinkingUIMessage(
             "premi [ enter ] per iniziare",
-            vec2(center().x, center().y+100)
+            vec2(center().x, center().y+150)
         )
 
         onKeyPress("enter", () => {

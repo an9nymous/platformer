@@ -19,7 +19,7 @@ export const load = {
       loadSprite("skybg", "./assets/skybg.jpeg")
       loadSprite("coin-icon", "./assets/Coins_UI.png")
       loadSprite("star-ico", "./assets/quore.png")
-      loadSprite("logo","./assets/Logo.png")
+      loadSprite("logo","./assets/Logos.png")
       loadSprite("axe", "./assets/Axe_trap.png")
       loadSprite("bridge", "./assets/Bridge.png")
       loadSprite("saw","./assets/Circular_Saw.png")
@@ -403,7 +403,7 @@ export const load = {
           r:2
         }
       })
-      
+      loadSprite("tile", "./assets/Leaf_Tileset.png")
     },
     sounds: () => {
         loadSound("confirm-ui", "./sounds/confirm-ui.wav")

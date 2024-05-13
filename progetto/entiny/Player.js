@@ -27,7 +27,7 @@ export class Player{
              *{ shape: new Rect(vec2(0, 3), 8, 8) } 
              */
             scale(1.5),
-            area({ shape: new Rect(vec2(20, 25), 8, 8) }),
+            area({shape: new Rect(vec2(0,10), 10,25)}),
             anchor("center"),
             pos(this.initialX, this.initialY),
             body(),
