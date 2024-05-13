@@ -99,7 +99,37 @@ export const load = {
               br:8,
           },
       })
-      
+      loadSprite("ppl","./assets/Cppl.png",{
+        sliceX:6,
+        sliceY:8,
+        anims:{
+          idle:{
+            from:0,
+            to:4,
+            loop:true
+          },
+          walk:{
+            from:6,
+            to:11,
+            loop:true
+          },
+          run:{
+            from:12,
+            to:17,
+            loop:true
+          },
+          "jump-up":{
+            from:41,
+            to:47,
+            loop:false
+          },
+          "jump-down":{
+            from:46,
+            to:47,
+            loop:false
+          }
+        }
+      })
       loadSprite("grass-oneway-tileset", "./assets/Grass_Oneway.png", {
           sliceX: 3,
           sliceY: 4,

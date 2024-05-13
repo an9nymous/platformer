@@ -22,11 +22,14 @@ export class Player{
     }
     makePlayer(){
         this.gameObj = add([
-            sprite("player", { anim: "idle" }),
-            area({ shape: new Rect(vec2(0, 3), 8, 8) }),
+            sprite("ppl", { anim: "idle" }),//?cambiare il primo arg dello sprite per cambiare lo sprite del personaggio
+            /* *mettere nella riga AREA questa riga in commento per avere il collider dell'altro personaggio
+             *{ shape: new Rect(vec2(0, 3), 8, 8) } 
+             */
+            scale(1.5),
+            area({ shape: new Rect(vec2(20, 25), 8, 8) }),
             anchor("center"),
             pos(this.initialX, this.initialY),
-            scale(4),
             body(),
             "player",
         ])
