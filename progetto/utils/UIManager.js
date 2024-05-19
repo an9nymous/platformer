@@ -150,6 +150,7 @@ class UIManager{
             go(1)//!cambiarlo per cambiare la scena iniziale
         })
     }
+    
     displayGameOverScreen() {
         add([rect(1280, 720), color(0, 0, 0)])
         add([

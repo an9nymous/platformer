@@ -18,6 +18,7 @@ import { Birds } from "./entiny/Birds.js";
 import { levelSLayout, levelSMappings } from "./content/lvlsecreto/LvlsegLay.js";
 import { levelSConfig } from "./content/lvlsecreto/config.js"
 import { calcol } from "./utils/Calcol.js";
+import { level4Config } from "./content/lvl4/config.js";
 
 kaboom({
     width:1280,
@@ -197,6 +198,27 @@ const scenes= {
         uiManager.displayLivesCount()
         player.updatelivesCount(uiManager.livesCountUI)  
     },
+    4:()=>{
+        //livello scuola
+        
+        const player = new Player(
+            level4Config.startPosX,
+            level4Config.startPosY,
+            level4Config.playerSpeed,
+            level4Config.jumpForce,
+            level4Config.nlive,
+            4,
+            true)
+        player.enablepassthroug()
+        player.update()
+        player.enableCoin()
+        calcol.EnableCalcul()
+        attachedCamera(player.gameObj, 0, 200)
+        uiManager.displayCoinCount()
+        player.updateCoinCount(uiManager.coinCountUI)
+        uiManager.displayLivesCount()
+        player.updatelivesCount(uiManager.livesCountUI)
+    },
     segreto:()=>{
         const lvlS = new Level()
         lvlS.drawBackground("bga")
@@ -228,9 +250,11 @@ const scenes= {
         add([sprite("calc"),scale(0.5), pos(center().x,center().y+50),area(),anchor("center")])
         calcol.buf()
     },
+    
     gameover:()=>{
         uiManager.displayGameOverScreen()
     },
+    
     end:()=>{
         
         uiManager.displayEndGameScreen()
@@ -241,5 +265,5 @@ const scenes= {
 for(const key in scenes){
     scene(key, scenes[key])
 }
-// go("nuovo")
+// go("school")
 go("menu")
