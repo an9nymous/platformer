@@ -19,6 +19,7 @@ import { levelSLayout, levelSMappings } from "./content/lvlsecreto/LvlsegLay.js"
 import { levelSConfig } from "./content/lvlsecreto/config.js"
 import { calcol } from "./utils/Calcol.js";
 import { level4Config } from "./content/lvl4/config.js";
+import { level4Layout, level4Mappings } from "./content/lvl4/Lvl4Lay.js";
 
 kaboom({
     width:1280,
@@ -198,27 +199,29 @@ const scenes= {
         uiManager.displayLivesCount()
         player.updatelivesCount(uiManager.livesCountUI)  
     },
-    4:()=>{
-        //livello scuola
-        
-        const player = new Player(
-            level4Config.startPosX,
-            level4Config.startPosY,
-            level4Config.playerSpeed,
-            level4Config.jumpForce,
-            level4Config.nlive,
-            4,
-            true)
-        player.enablepassthroug()
-        player.update()
-        player.enableCoin()
-        calcol.EnableCalcul()
-        attachedCamera(player.gameObj, 0, 200)
-        uiManager.displayCoinCount()
-        player.updateCoinCount(uiManager.coinCountUI)
-        uiManager.displayLivesCount()
-        player.updatelivesCount(uiManager.livesCountUI)
-    },
+    // 4:()=>{
+    //  // livello scuola
+    //     const lvl4 = new Level()
+    //     add([sprite("scuola"), fixed(), scale(3)])
+    //     lvl4.drawMapLayout(level4Layout,level4Mappings)
+    //     const player = new Player(
+    //         level4Config.startPosX,
+    //         level4Config.startPosY,
+    //         level4Config.playerSpeed,
+    //         level4Config.jumpForce,
+    //         level4Config.nlive,
+    //         4,
+    //         true)
+    //     player.enablepassthroug()
+    //     player.update()
+    //     player.enableCoin()
+    //     calcol.EnableCalcul()
+    //     attachedCamera(player.gameObj, 0, 200)
+    //     uiManager.displayCoinCount()
+    //     player.updateCoinCount(uiManager.coinCountUI)
+    //     uiManager.displayLivesCount()
+    //     player.updatelivesCount(uiManager.livesCountUI)
+    // },
     segreto:()=>{
         const lvlS = new Level()
         lvlS.drawBackground("bga")

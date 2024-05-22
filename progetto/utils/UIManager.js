@@ -147,7 +147,7 @@ class UIManager{
         )
         onKeyPress("enter", () => {
             play("confirm-ui",{speed: 1.5}) 
-            go(1)//!cambiarlo per cambiare la scena iniziale
+            go(4)//!cambiarlo per cambiare la scena iniziale
         })
     }
     

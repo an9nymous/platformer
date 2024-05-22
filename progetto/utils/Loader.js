@@ -17,6 +17,7 @@ export const load = {
       loadSprite("sky-background-1", "./assets/Sky_Background_1.png")
       loadSprite("sky-background-2", "./assets/Sky_Background_2.png")
       loadSprite("skybg", "./assets/skybg.jpeg")
+      loadSprite("scuola", "./assets/scuola.png")
       loadSprite("coin-icon", "./assets/Coins_UI.png")
       loadSprite("star-ico", "./assets/quore.png")
       loadSprite("logo","./assets/Logos.png")
@@ -32,6 +33,21 @@ export const load = {
       loadSprite("bgd", "./assets/sfondo/4.png")
       //sfondo vittoria
       loadSprite("trofeo", "./assets/tho_bg.jpg")
+      loadSprite("Plank-tileset", "./assets/planks.png",{
+          sliceX:3,
+          sliceY:4,
+          anims:{ //*è principalmente usata per le animazioni
+              tl:0,
+              tm:1,
+              tr:2,
+              ml:3,
+              mm:4,
+              mr:5,
+              bl:6,
+              bm:7,
+              br:8,
+          },
+      })
       loadSprite("player", "./assets/Player.png", {
           sliceX: 4,
           sliceY: 6,

@@ -129,5 +129,6 @@ export function generateMappings(tileType) {
       area(),
       scale(0.04)
     ],
+    
   }
 }
