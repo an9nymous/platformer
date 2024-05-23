@@ -1,12 +1,12 @@
 export class Level {
-    drawWaves(type, anim) {
+    DisegnaOnde(type, anim) {
         let offset = -100
         for (let i = 0; i < 21; i++) {
           add([sprite(type, { anim }), pos(offset, 600), scale(4), fixed()])
           offset += 64
         }
       }
-    drawWaves(type, anim) {
+    DisegnaOnde(type, anim) {
       let offset = -100
       for (let i = 0; i < 21; i++) {
         add([sprite(type, { anim }), pos(offset, 600), scale(4), fixed()])
@@ -14,7 +14,7 @@ export class Level {
       }
     }
   
-    drawMapLayout(levelLayout, mappings) {
+    DLay(levelLayout, mappings) {
       const layerSettings = {
         tileWidth: 16,
         tileHeight: 12,
@@ -31,7 +31,7 @@ export class Level {
       }
     }
   
-    drawBackground(bgSpriteName) {
+    SfondoDis(bgSpriteName) {
       add([sprite(bgSpriteName), fixed(), scale(4)])
     }
   }

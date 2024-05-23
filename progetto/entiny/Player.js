@@ -13,14 +13,14 @@ export class Player{
         this.CurrentLevelScen = CurrentLevelScen
         this.initialX = posX
         this.initialY = posY
-        this.makePlayer()
-        this.setPlayerControlls()
+        this.creaPlayer()
+        this.controlliGiocatore()
         this.speed = speed
         this.jumpoForce = jumpoForce
         this.lives = nLives
         this.previousHeight = this.gameObj.pos.y
     }
-    makePlayer(){
+    creaPlayer(){
         this.gameObj = add([
             sprite("ppl", { anim: "idle" }),//?cambiare il primo arg dello sprite per cambiare lo sprite del personaggio
             /* *mettere nella riga AREA questa riga in commento per avere il collider dell'altro personaggio
@@ -34,7 +34,7 @@ export class Player{
             "player",
         ])
     }
-    enablepassthroug(){ //migliora il passaggio tra i collider
+    PassaggioTrue(){ //migliora il passaggio tra i collider
         this.gameObj.onBeforePhysicsResolve(async (collision) => {
             if(collision.target.is("passthrough") && this.gameObj.isJumping()){ 
                 collision.preventResolution() //?disattiva il comando
@@ -51,14 +51,14 @@ export class Player{
         })
         
     }
-    enableCoin(){
+    OnCoin(){
         this.gameObj.onCollide("coin", (coin)=>{
             this.coins++
             destroy(coin)
             play("coin")
         })
     }
-    setPlayerControlls(){
+    controlliGiocatore(){
         onKeyDown("left", ()=>{
             if(this.gameObj.curAnim()!== "run") this.gameObj.play("run") //se non è attaccata ad un gameobj 'play' si usa per i suoni
             this.gameObj.flipX=true //flippa lo sprite sull asse x
@@ -95,7 +95,7 @@ export class Player{
             calcol.EnableCalcul()
         }
     }
-    respawnPlayer(){
+    respawn(){
         if(this.lives >0){
             this.gameObj.pos = vec2(this.initialX, this.initialY)
             this.lives--
@@ -105,17 +105,17 @@ export class Player{
         else go("gameover")
     }
     enableMobVuln() {
-        function hitAndRespawn(context){
+        function colpoERespawn(context){
             play("hit", {speed:1.5})
-            context.respawnPlayer()
+            context.respawn()
         }
         //commenta fino a riga 114 per togliere le collisioni con i nemici
-        this.gameObj.onCollide("spiders", ()=>hitAndRespawn(this))
-        this.gameObj.onCollide("flame", ()=>hitAndRespawn(this))
-        this.gameObj.onCollide("fish", ()=>hitAndRespawn(this))
-        this.gameObj.onCollide("axes", ()=>hitAndRespawn(this))
-        this.gameObj.onCollide("birds", ()=>hitAndRespawn(this))
-        this.gameObj.onCollide("saws", ()=>hitAndRespawn(this))
+        this.gameObj.onCollide("spiders", ()=>colpoERespawn(this))
+        this.gameObj.onCollide("flame", ()=>colpoERespawn(this))
+        this.gameObj.onCollide("fish", ()=>colpoERespawn(this))
+        this.gameObj.onCollide("axes", ()=>colpoERespawn(this))
+        this.gameObj.onCollide("birds", ()=>colpoERespawn(this))
+        this.gameObj.onCollide("saws", ()=>colpoERespawn(this))
     }
 
     update(){
@@ -129,7 +129,7 @@ export class Player{
             if(this.gameObj.pos.y > 1000){
                 play("hit", {speed:1.5})
 
-                this.respawnPlayer()
+                this.respawn()
             }
             if(!this.isMoving && this.gameObj.curAnim !=="idle") this.gameObj.play("idle")
             if(!this.gameObj.isGrounded() &&  this.heightDelta >0 && this.gameObj.curAnim() !== "jump-up"){
@@ -141,12 +141,12 @@ export class Player{
             this.calcol()
         })
     }
-    updatelivesCount(livesCountUI){
+    UcontoVite(livesCountUI){
         onUpdate(() =>{
             livesCountUI.text = this.lives
         })
     }
-    updateCoinCount(coinCountUI) {
+    UcontoCoin(coinCountUI) {
         
         onUpdate(() => {
             coinCountUI.text = `${this.coins} / ${coinCountUI.fullCoinCount}`

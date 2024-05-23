@@ -1,5 +1,5 @@
 class UIManager{
-    displayLivesCount(player) {
+    ContoVite(player) {
        this.livesCountUI = add([
             text("", {
                 font: "Round",
@@ -11,7 +11,7 @@ class UIManager{
         ])
         this.livesCountUI.add([sprite("star-ico"), pos(-60,-5),scale(3),fixed()])
     }
-    displayCoinCount(player) {
+    ContoCoin(player) {
         this.coinCountUI = add([
           text("", {
             font: "Round",
@@ -29,7 +29,7 @@ class UIManager{
         this.coinCountUI.add([sprite("coin-icon"), pos(-60, 0), scale(3), fixed()])
     }
 
-    displayBlinkingUIMessage(content,position){
+    messaggioLuminoso(content,position){
         const message = add([
             text(content,{
                 size: 24,
@@ -65,7 +65,7 @@ class UIManager{
             message.enterState("flash-up")
         })
     }
-    displayMainMenu() {
+    MenuMain() {
         add([
             sprite("forest-background"),
             scale(4)
@@ -77,7 +77,7 @@ class UIManager{
             anchor("center"), //! è ancorato al centro NON è posizionato al centro
             pos(center().x,center().y - 100)
         ])
-        this.displayBlinkingUIMessage(
+        this.messaggioLuminoso(
             "premi [ enter ] per iniziare",
             vec2(center().x, center().y+150)
         )
@@ -87,7 +87,7 @@ class UIManager{
             go("Controls")
         })
     }
-    displayTextMenu(){
+    menuTesto(){
         const testo = `
         non dovresti essere qui, \n
         anche tu stai aspettando? \n
@@ -101,7 +101,7 @@ class UIManager{
         ])
         add([text(testo),pos(400,100),color(255,0,0),{font:"creepy", size:80}])
 
-        this.displayBlinkingUIMessage(
+        this.messaggioLuminoso(
             "premi [ enter ] per iniziare",
             vec2(center().x, center().y+300)
         )
@@ -111,7 +111,7 @@ class UIManager{
             go("segreto")
         })
     }
-    displayControlsMenu(){
+    controllis(){
         add([
             sprite("forest-background"),
             scale(4)
@@ -141,17 +141,17 @@ class UIManager{
             text("muoviti", { font: "Round", size: 32 }),
             pos(-20, 100),
         ])
-        this.displayBlinkingUIMessage(
+        this.messaggioLuminoso(
             "premi [ enter ] per continuare",
             vec2(center().x, center().y + 300)
         )
         onKeyPress("enter", () => {
             play("confirm-ui",{speed: 1.5}) 
-            go(4)//!cambiarlo per cambiare la scena iniziale
+            go(1)//!cambiarlo per cambiare la scena iniziale
         })
     }
     
-    displayGameOverScreen() {
+    sconfitta() {
         add([rect(1280, 720), color(0, 0, 0)])
         add([
           text("SEI MORTO!", { size: 50, font: "Round" }),
@@ -160,7 +160,7 @@ class UIManager{
           pos(center()),
         ])
     
-        this.displayBlinkingUIMessage(
+        this.messaggioLuminoso(
           "premi [ enter ] per riprovare",
           vec2(center().x, center().y + 100)
         )
@@ -170,7 +170,7 @@ class UIManager{
           go(1)
         })
       }
-    displayEndGameScreen() {
+    vittoria() {
         add([sprite("trofeo"),scale(2), fixed()])
         add([
             text("hai vinto! grazie per aver giocato", { size: 50, font: "Round" }),
@@ -181,7 +181,7 @@ class UIManager{
         ])
         add([rect(4000,4000),color(171, 130, 7),fixed(), pos(center().x-900,center().y+220)])
         add([text("ora che hai il codice puoi andare al livello segreto a destra", {font:"Round"}),fixed(), pos(center().x-625,center().y+300)])
-        this.displayBlinkingUIMessage(
+        this.messaggioLuminoso(
             "premi [ Enter ] per giocare ancora",
             vec2(center().x, center().y + 250),
         )
