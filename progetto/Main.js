@@ -1,4 +1,4 @@
-import kaboom from "./libs/kaboom.mjs";
+import kaboom from "./libs/kaboom.js";
 import { level1Layout, level1Mapping } from "./content/lvl1/Lvl1Lay.js";
 import { Level } from "./utils/Level.js";
 import { uiManager } from "./utils/UIManager.js";
