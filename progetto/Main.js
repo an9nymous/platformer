@@ -18,8 +18,7 @@ import { Birds } from "./entiny/Birds.js";
 import { levelSLayout, levelSMappings } from "./content/lvlsecreto/LvlsegLay.js";
 import { levelSConfig } from "./content/lvlsecreto/config.js"
 import { calcol } from "./utils/Calcol.js";
-import { level4Config } from "./content/lvl4/config.js";
-import { level4Layout, level4Mappings } from "./content/lvl4/Lvl4Lay.js";
+
 
 kaboom({
     width: 1280,
