@@ -12,7 +12,7 @@ export const load = {
       loadSprite("space", "./assets/Space_Key_Dark.png")
 
       loadSprite("forest-background","./assets/forseta.jpeg")//* le prime virgolette sono come vogliamo riferirci (come il tag) e le seconde sono il percorso 
-      loadSprite("caste", "./assets/Castle_background_0.png")
+      loadSprite("caste", "./assets/castle.png")
       loadSprite("sky-background-0", "./assets/Sky_Background_0.png")
       loadSprite("sky-background-1", "./assets/Sky_Background_1.png")
       loadSprite("sky-background-2", "./assets/Sky_Background_2.png")
