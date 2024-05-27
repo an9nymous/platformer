@@ -163,9 +163,10 @@ const scenes = {
         setGravity(level3Config.gravity)
         const lvl3 = new Level()
         lvl3.SfondoDis("sky-background-0")
+        add([sprite("sss"),pos(center().x,center().y-50), scale(.9), anchor("center"), fixed()])
         lvl3.SfondoDis("sky-background-1")
         lvl3.SfondoDis("sky-background-2")
-        add([sprite("sss"),pos(center().x,center().y-50), scale(.9), anchor("center"), fixed()])
+        
         lvl3.DLay(level3Layout, level3Mappings)
         const bird = new Birds(
             level3Config.birdPositions.map(birdPos => birdPos()),
@@ -189,8 +190,8 @@ const scenes = {
             text(2, {
                 size: 20
             }),
-            color(227, 227, 227),
-            pos(center().x+65, center().y + 10),
+            color(240, 240, 240),
+            pos(center().x+85, center().y + 10),
             fixed()
         ])
         uiManager.darkbg() // *questo è per lo sfondo dell UI
