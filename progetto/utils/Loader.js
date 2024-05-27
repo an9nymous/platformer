@@ -18,6 +18,7 @@ export const load = {
       loadSprite("sky-background-2", "./assets/Sky_Background_2.png")
       loadSprite("skybg", "./assets/skybg.jpeg")
       loadSprite("scuola", "./assets/scuola.png")
+      loadSprite("sss", "./assets/supe.png")
       loadSprite("coin-icon", "./assets/Coins_UI.png")
       loadSprite("star-ico", "./assets/quore.png")
       loadSprite("logo","./assets/Logos.png")
@@ -31,6 +32,7 @@ export const load = {
       loadSprite("bgb", "./assets/sfondo/2.png")
       loadSprite("bgc", "./assets/sfondo/3.png")
       loadSprite("bgd", "./assets/sfondo/4.png")
+      loadSprite("Sbg", "./assets/Bridge.png")
       //sfondo vittoria
       loadSprite("trofeo", "./assets/tho_bg.jpg")
       loadSprite("Plank-tileset", "./assets/planks.png",{

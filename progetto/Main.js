@@ -165,6 +165,7 @@ const scenes = {
         lvl3.SfondoDis("sky-background-0")
         lvl3.SfondoDis("sky-background-1")
         lvl3.SfondoDis("sky-background-2")
+        add([sprite("sss"), scale(), pos(center().x,center().y)])
         lvl3.DLay(level3Layout, level3Mappings)
         const bird = new Birds(
             level3Config.birdPositions.map(birdPos => birdPos()),
@@ -252,7 +253,9 @@ const scenes = {
         add([sprite("calc"), scale(0.5), pos(center().x, center().y + 50), area(), anchor("center")])
         calcol.buf()
     },
-
+    giacomo:()=>{
+        add([sprite("Sbg"), scale(4)])
+    },
     gameover: () => {
         uiManager.sconfitta()
     },
@@ -267,5 +270,5 @@ const scenes = {
 for (const key in scenes) {
     scene(key, scenes[key])
 }
-// go("school")
+// go("giacomo")
 go("menu")
