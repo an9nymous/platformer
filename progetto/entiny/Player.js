@@ -110,12 +110,12 @@ export class Player{
             context.respawn()
         }
         //commenta fino a riga 114 per togliere le collisioni con i nemici
-        this.gameObj.onCollide("spiders", ()=>colpoERespawn(this))
-        this.gameObj.onCollide("flame", ()=>colpoERespawn(this))
-        this.gameObj.onCollide("fish", ()=>colpoERespawn(this))
-        this.gameObj.onCollide("axes", ()=>colpoERespawn(this))
-        this.gameObj.onCollide("birds", ()=>colpoERespawn(this))
-        this.gameObj.onCollide("saws", ()=>colpoERespawn(this))
+    //     this.gameObj.onCollide("spiders", ()=>colpoERespawn(this))
+    //     this.gameObj.onCollide("flame", ()=>colpoERespawn(this))
+    //     this.gameObj.onCollide("fish", ()=>colpoERespawn(this))
+    //     this.gameObj.onCollide("axes", ()=>colpoERespawn(this))
+    //     this.gameObj.onCollide("birds", ()=>colpoERespawn(this))
+    //     this.gameObj.onCollide("saws", ()=>colpoERespawn(this))
     }
 
     update(){

@@ -39,6 +39,7 @@ export function generateMappings(tileType) {
       area({ shape: new Rect(vec2(0), 16, 3) }), // hitbox custom
       "passthrough", // è un tag
       body({ isStatic: true }),
+      
       offscreen(),
     ],
     a: () => [
