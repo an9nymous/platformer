@@ -39,7 +39,7 @@ export class Player{
             if(collision.target.is("passthrough") && this.gameObj.isJumping()){ 
                 collision.preventResolution() //?disattiva il comando
             }
-            if (collision.target.is("passthrough") && isKeyDown("down")) {
+            if (collision.target.is("passthrough") && isKeyDown("s")) {
                 collision.preventResolution()
             }
             if(collision.target.is("Portales")){//portale viola
@@ -59,13 +59,13 @@ export class Player{
         })
     }
     controlliGiocatore(){
-        onKeyDown("left", ()=>{
+        onKeyDown("a", ()=>{
             if(this.gameObj.curAnim()!== "run") this.gameObj.play("run") //se non è attaccata ad un gameobj 'play' si usa per i suoni
             this.gameObj.flipX=true //flippa lo sprite sull asse x
             this.isMoving = true
             if(!this.isRespawning) this.gameObj.move(-this.speed,0)
         })
-        onKeyDown("right", ()=>{
+        onKeyDown("d", ()=>{
             if(this.gameObj.curAnim()!== "run") this.gameObj.play("run") 
             this.gameObj.flipX=false //non flippa lo sprite
             this.isMoving = true
@@ -110,12 +110,12 @@ export class Player{
             context.respawn()
         }
         //commenta fino a riga 114 per togliere le collisioni con i nemici
-    //     this.gameObj.onCollide("spiders", ()=>colpoERespawn(this))
-    //     this.gameObj.onCollide("flame", ()=>colpoERespawn(this))
-    //     this.gameObj.onCollide("fish", ()=>colpoERespawn(this))
-    //     this.gameObj.onCollide("axes", ()=>colpoERespawn(this))
-    //     this.gameObj.onCollide("birds", ()=>colpoERespawn(this))
-    //     this.gameObj.onCollide("saws", ()=>colpoERespawn(this))
+        this.gameObj.onCollide("spiders", ()=>colpoERespawn(this))
+        this.gameObj.onCollide("flame", ()=>colpoERespawn(this))
+        this.gameObj.onCollide("fish", ()=>colpoERespawn(this))
+        this.gameObj.onCollide("axes", ()=>colpoERespawn(this))
+        this.gameObj.onCollide("birds", ()=>colpoERespawn(this))
+        this.gameObj.onCollide("saws", ()=>colpoERespawn(this))
     }
 
     update(){
